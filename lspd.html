@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criminal Case Support</title>
+    <!-- import ./style.css-->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo-container">
+        <div class="logo"></div>
+        <span>Used For LSPD</span>
+      </div>
+      <nav>
+        <a href="#">Hỗ trợ xử án</a>
+      </nav>
+      <div class="user-info">
+        <div class="user-avatar">J</div>
+        <span>Junnx</span>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <div class="container">
+      <!-- Rules section -->
+      <div class="rules">
+        <ul>
+          <li>
+            Khi xử các tội danh bắt buộc phải kèm phạt bill tương ứng với tội
+            danh đó. Đối với trường hợp vi phạm từ CẤP ĐỘ 2 trở lên, nếu kiểm
+            tra Công dân đang nợ quá 5 bill thì quy thêm tội VI PHẠM LUẬT TIÊU
+            DÙNG, tính thêm 5 phút tù/1 bill nợ
+          </li>
+          <li>
+            Khi xử lý hình sự cần kiểm tra Giấy phép Nghĩa vụ quân sự của công
+            dân. Nếu có công dân có Giấy phép Nghĩa vụ quân sự thì được MIỄN tội
+            danh Tàn trữ vũ khí nóng trái phép và Sử dụng vũ khí nóng trái phép
+            (chụp lại hình ảnh có giấy NVQS)
+          </li>
+          <li>
+            Đối với các tội danh liên quan đến Gây thương tích, sử dụng vũ khí
+            cần kiểm tra người Công dân và yêu cầu Công dân nộp lại hung khí gây
+            án, nếu không sẽ quy tội danh Không giao nộp hung khí gây án trừ
+            trường hợp có Bằng chứng Công dân đã làm rớt vũ khí
+          </li>
+          <li>
+            Không tịch thu Vũ khí thô sơ trong trường hợp Công dân chỉ tàng trữ
+            trong người mà không lấy ra sử dụng
+          </li>
+        </ul>
+      </div>
+
+      <!-- Checkboxes row -->
+      <div class="checkbox-row">
+        <div class="checkbox-group">
+          <input type="number" value="5" id="violation-num" />
+        </div>
+        <div class="checkbox-group">
+          <input
+            type="checkbox"
+            id="violation"
+            onclick="addRule('violation')"
+          />
+          <label for="violation">Vi phạm luật tiêu dùng</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="number" value="10" id="cooperation-num" hidden/>
+        </div>
+        <div class="checkbox-group">
+          <input
+            type="checkbox"
+            id="cooperation"
+            onclick="addRule('cooperation')"
+          />
+          <label for="cooperation">Có hợp tác</label>
+        </div>
+         <div class="checkbox-group">
+          <input type="number" value="10" id="Confess-num" hidden/>
+        </div>
+        <div class="checkbox-group">
+          <input
+            type="checkbox"
+            id="Confess"
+            onclick="addRule('Confess')"
+          />
+          <label for="Confess">Đàu thú</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="surrender" onclick="addRule('weapons')" />
+          <label for="surrender">Chỉ có tội tàng trữ vũ khí nóng</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="military" onclick="addRule('military')" />
+          <label for="military">Có giấy Nghĩa vụ quân sự</label>
+        </div>
+      </div>
+
+      <!-- Search fields -->
+      <div class="search-fields">
+        <div class="search-field">
+          <input
+            type="text"
+            placeholder="Nhập tên đối tượng"
+            onblur="getName()"
+            id="name"
+          />
+          <div class="field-label">Tên đối tượng</div>
+        </div>
+        <div class="search-field">
+          <div type="text" placeholder="CCCD"></div>
+          <div class="field-label"></div>
+        </div>
+        <div class="search-field">
+          <input
+            type="number"
+            id="cccd"
+            placeholder="Căn cước công dân"
+            onblur="getCccd()"
+          />
+          <div class="field-label">Căn cước công dân</div>
+        </div>
+      </div>
+
+      <!-- Red bordered section -->
+      <div class="case-details">
+        <div class="case-info">
+          <div>Tên: <span id="name-value"></span></div>
+
+          <div>CCCD: <span id="cccd-value"></span></div>
+
+          <div>Tội danh: <span id="offenses"></span></div>
+
+          <div>Mức án: <span id="charges"></span></div>
+
+          <div>Đã xử lý</div>
+          <div></div>
+        </div>
+        <div class="copy-button">
+          <button onclick="copyOffenses()">Nhấn vào đây để sao chép</button>
+          <button onclick="copyCharges()" style="color: brown">
+            Nhấn vào đây để sao chép số phút
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Collapsible sections -->
+      </div>
+    </div>
+  </body>
+
+  <!-- import ./script.js -->
+  <script type="module" src="./script.js"></script>
+</html>

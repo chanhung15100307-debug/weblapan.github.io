@@ -1,0 +1,255 @@
+/* style.css */
+
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f0f4f8; /* xanh nhạt nền */
+  color: #1a1a1a;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0a3d62; /* xanh đậm LSPD */
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+header .logo-container {
+  display: flex;
+  align-items: center;
+}
+
+header .logo {
+  width: 40px;
+  height: 40px;
+  background: url('image/download.png') center/cover no-repeat;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #fbc531; /* vàng badge */
+}
+
+header nav a {
+  color: #f5f6fa;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+header .user-info {
+  display: flex;
+  align-items: center;
+}
+
+header .user-avatar {
+  width: 35px;
+  height: 35px;
+  background-color: #1e90ff; /* xanh nhạt avatar */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* Container */
+.container {
+  padding: 20px;
+}
+
+/* Rules section */
+.rules {
+  background-color: #dff9fb; /* xanh nhạt */
+  border-left: 5px solid #0a3d62; /* xanh đậm */
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.rules ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.rules li {
+  margin-bottom: 10px;
+}
+
+/* Checkbox row */
+.checkbox-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0a3d62; /* xanh đậm */
+}
+
+.checkbox-group input[type="number"] {
+  width: 60px;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Search fields */
+.search-fields {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.search-field {
+  position: relative;
+  flex: 1;
+}
+
+.search-field input[type="text"],
+.search-field input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid #0a3d62; /* xanh đậm */
+  background-color: #f0f4f8; /* xanh nhạt */
+}
+
+.field-label {
+  position: absolute;
+  bottom: -18px;
+  left: 5px;
+  font-size: 12px;
+  color: #0a3d62;
+  font-weight: 600;
+}
+
+/* Case details (red bordered section) */
+.case-details {
+  border: 2px solid #e84118; /* đỏ nổi bật */
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+
+.case-info div {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.copy-button {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.copy-button button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.copy-button button:first-child {
+  background-color: #0a3d62; /* xanh đậm */
+  color: #fbc531; /* vàng badge */
+}
+
+.copy-button button:first-child:hover {
+  background-color: #065086;
+}
+
+.copy-button button:nth-child(2) {
+  background-color: #f5f6fa;
+  border: 1px solid #e84118;
+  color: #e84118;
+}
+
+.copy-button button:nth-child(2):hover {
+  background-color: #e84118;
+  color: #fff;
+}
+
+/* Collapsible sections */
+.collapsible {
+  background-color: #f5f6fa;
+  border: 1px solid #0a3d62;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: #0a3d62;
+  color: #fbc531;
+  font-weight: 600;
+  border-radius: 5px 5px 0 0;
+}
+
+.collapsible-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.collapsible.active .collapsible-icon {
+  transform: rotate(180deg);
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px 15px;
+  background-color: #dff9fb;
+  border-top: 1px solid #0a3d62;
+}
+
+.collapsible.active .collapsible-content {
+  display: block;
+}
+
+/* Table inside collapsible */
+.collapsible table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.collapsible th,
+.collapsible td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid #0a3d62;
+}
+
+.number-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
